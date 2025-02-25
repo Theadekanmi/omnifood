@@ -7,16 +7,32 @@
     list-style: none;
 }
 body{
+  height: 100%;
     width: 100%;
+    max-width: 100vw;
     overflow-x: hidden;
     font-family: "Rubik", sans-serif;
     line-height: 1;
     font-weight: 500;
     color: rgb(85, 85, 85);
+    position: relative;
 }
-/* heading and nav styling */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
 header{
     width: 100%;
+    max-width: 100vw;
     z-index: 2;
     top: 0;
     display: flex;
@@ -26,7 +42,10 @@ header{
     padding: 3%;
     height: 50px;
     background-color: rgb(253, 242, 233);
+    box-sizing: border-box;
 }
+
+
 
 .logo{
     height: 1.4rem;
@@ -155,15 +174,20 @@ header{
     background-color: #fdf2e9;
 }
 
+
 .main-con{
-    width: 100%;
-    padding: 3%;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    gap: 30px;
+  width: 100%;
+  max-width: 100vw;
+  padding: 3%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  box-sizing: border-box;
+  overflow: hidden;
 }
-    .main-item{
+
+.main-item{
         width: 100%;
         height: auto;
 
@@ -186,14 +210,13 @@ header{
         display: inline-block;
         text-decoration: none;
         font-size: 1.2rem;
-
-  font-weight: 500;
-  padding:3% 4%;
-  border: none;
-  cursor: pointer;
-  font-family: inherit;
-  transition: all 0.3s;
-  border-radius: 9px;
+        font-weight: 500;
+        padding:3% 4%;
+        border: none;
+        cursor: pointer;
+        font-family: inherit;
+        transition: all 0.3s;
+        border-radius: 9px;
 }
 
 .btn--full:link,
@@ -614,7 +637,8 @@ header{
   }
 
   /* media query for meals */
-  @media screen and (max-width: 1220px) {
+
+   @media screen and (max-width: 1220px) {
     .container {
       max-width: 100%;
       padding: 0 2rem;
@@ -639,6 +663,7 @@ header{
   }
   
   /* Media query for max-width 950px */
+
   @media screen and (max-width: 950px) {
     .container {
       max-width: 100%;
@@ -667,6 +692,7 @@ header{
   }
 
   /* Media query for 805px to 546px */
+
 @media screen and (max-width: 805px) and (min-width: 546px) {
   .container {
     max-width: 100%;
@@ -677,6 +703,7 @@ header{
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    align-items: flex-start;
   }
   
   .heading-secondary {
@@ -700,33 +727,35 @@ header{
 }
 
 /* Media query for max-width 540px */
+
 @media screen and (max-width:540px) {
   .section-meals {
-    padding: 2rem 0; /* Reduce padding */
+    padding: 2rem 0; 
   }
   
   .container {
     max-width: 100%;
-    padding: 0 1rem; /* Reduce padding for smaller screens */
+    padding: 0 1rem; 
   }
   
   .grid {
     display: flex;
-    flex-direction: column; /* Change to column layout */
-    gap: 2rem; /* Add gap between items */
+    flex-direction: column; 
+    align-items: flex-start;
+    gap: 2rem; 
   }
   
   .heading-secondary {
-    font-size: 1.5rem; /* Further reduce font size for headings */
-    margin-bottom: 2rem; /* Adjust margin */
+    font-size: 1.5rem; 
+    margin-bottom: 2rem; 
   }
   .meal-content {
-    padding: 1rem 2rem 2rem 2rem; /* Further adjust padding for meal content */
+    padding: 1rem 2rem 2rem 2rem; 
   }
   
   .meal-title {
-    font-size: 1rem; /* Further adjust font size for meal titles */
-    margin-bottom: 1.5rem; /* Adjust margin */
+    font-size: 1rem; 
+    margin-bottom: 1.5rem; 
   }
   .diets{
     text-align: center;
@@ -734,19 +763,26 @@ header{
   .all-recipes{
    transform: translateY();
   }
-}
+} 
 
-/* Testimonials section */
+/* Testimonials styling */
+
 .section-test {
   background-color: rgb(253, 242, 233);
   display: grid;
-  grid-template-columns: 55fr 45fr;
+  grid-template-columns: 1fr; /* Stack content in a single column by default */
   align-items: center;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
 }
 
 .test-con {
-  padding: 7rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  width: 100%;
 }
+
 .subh {
   display: block;
   font-size: 1.2rem;
@@ -756,11 +792,12 @@ header{
   margin-bottom: 1.6rem;
   letter-spacing: 0.75px;
 }
+
 .heading-secondary {
-  transform: translateX(-30px);
   font-size: 2.5rem;
   line-height: 1.2;
   margin-bottom: 60px;
+  transform: translateX(-30px);
 }
 
 .testimonials {
@@ -796,59 +833,123 @@ header{
 
 .gallery-item {
   overflow: hidden;
+  min-height: 200px; /* Ensure the gallery item is tall enough for the image */
 }
 
 .gallery-item img {
   display: block;
   width: 100%;
+  height: auto;
   transition: all 0.4s;
+  object-fit: cover; /* Make sure images maintain their aspect ratio */
 }
 
 .gallery-item img:hover {
   transform: scale(1.1);
 }
 
-/* testimonial styling */
-/* Media Query for max-width 1100px */
-@media (max-width: 1100px) {
+/* Media Queries */
+
+/* Large screens (above 1100px) */
+@media (min-width: 1100px) {
   .section-test {
-    grid-template-columns: 1fr; /* Stack the testimonial and gallery vertically */
+    grid-template-columns: 55fr 45fr;
   }
 
   .testimonials {
-    grid-template-columns: 1fr 1fr; /* Two testimonials per row */
-    row-gap: 3rem;
+    grid-template-columns: repeat(2, 1fr); /* Two columns for large screens */
+    row-gap: 4.8rem;
+    column-gap: 5rem;
   }
 
   .gallery {
-    grid-template-columns: repeat(3, 1fr); /* Three images per row */
-  }
-
-  .gallery-item img {
-    height: auto; /* Maintain aspect ratio of images */
+    grid-template-columns: repeat(3, 1fr); /* Three columns for large screens */
   }
 }
 
-/* Media Query for max-width 540px */
+/* Medium screens (between 800px - 1100px) */
+@media (max-width: 1100px) {
+  .section-test {
+    grid-template-columns: 1fr; /* Stack sections on medium screens */
+  }
+
+  .testimonials {
+    grid-template-columns: 1fr 1fr; /* 2 columns for mid-sized screens */
+    row-gap: 3rem;
+    column-gap: 3rem;
+    padding: 2rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr); /* Three columns for medium screens */
+  }
+}
+
+/* Small screens (between 540px - 800px) */
+@media (max-width: 800px) {
+  .section-test {
+    grid-template-columns: 1fr; /* Stack content vertically on smaller screens */
+    padding: 2rem;
+  }
+
+  .testimonials {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns for small screens */
+    row-gap: 2rem;
+    column-gap: 2rem;
+    padding: 1rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for small screens */
+  }
+}
+
+/* Extra small screens (below 540px) */
 @media (max-width: 540px) {
+  .section-test {
+    padding: 1rem; /* Reduce padding on extra small screens */
+  }
+
   .testimonials {
     display: flex;
-    flex-direction: column; /* Stack testimonial text vertically */
+    flex-direction: column;
     align-items: center;
+    padding: 1rem;
   }
 
   .testimonial {
     margin-bottom: 2rem;
   }
 
+  .heading-secondary {
+    font-size: 1.8rem; /* Reduce font size on small screens */
+    text-align: center;
+  }
+
+  .test-con {
+    padding: 1rem;
+  }
+
   .gallery {
-    grid-template-columns: repeat(2, 1fr); /* Two images per row */
+    grid-template-columns: 1fr; /* One column for very small screens */
   }
 
   .gallery-item img {
-    height: auto; /* Maintain aspect ratio of images */
+    height: auto;
+    width: 100%;
+    object-fit: cover; /* Ensure images cover their container */
+  }
+
+  .subh {
+    font-size: 1rem; /* Adjust subheading size on small screens */
+  }
+
+  .testimonial-img {
+    width: 3rem; /* Make testimonial images smaller on small screens */
   }
 }
+
 
 
 /* pricing styling */
@@ -986,6 +1087,7 @@ header{
 }
 
 /* For screens with a max-width of 1200px */
+
 @media (max-width: 1200px) {
   .section-pricing {
       padding: 3rem 0;
@@ -999,19 +1101,19 @@ header{
   .heading-secondaryy {
       font-size: 2rem;
       margin-bottom: 30px;
-      text-align: center; /* Centering heading on medium screens */
+      text-align: center; 
   }
 
   .pricing-plan {
       width: 100%;
       margin-bottom: 2rem;
-      text-align: center; /* Center the pricing plan */
+      text-align: center; 
   }
 
   .pricing-plan--starter,
   .pricing-plan--complete {
       padding: 3rem;
-      text-align: center; /* Center content inside pricing plans */
+      text-align: center; 
   }
 
   .plan-namee {
@@ -1033,13 +1135,13 @@ header{
   .plan-details {
       font-size: 1rem;
       margin-top: 2rem;
-      text-align: center; /* Ensure plan details are centered */
+      text-align: center; 
   }
 
   .feature {
-      width: 45%; /* Two-column layout for features */
+      width: 45%; 
       margin-bottom: 2rem;
-      text-align: center; /* Center the features */
+      text-align: center; 
   }
 
   .feature-icon {
@@ -1058,6 +1160,7 @@ header{
 }
 
 /* For screens with a max-width of 540px */
+
 @media (max-width: 540px) {
   .section-pricing {
       padding: 2rem 0;
@@ -1071,11 +1174,11 @@ header{
   .heading-secondaryy {
       font-size: 1.8rem;
       margin-bottom: 20px;
-      text-align: center; /* Centering on small screens */
+      text-align: center; 
   }
 
   .pricing-plan {
-      width: 100%; /* Full width for small screens */
+      width: 100%; 
       margin-bottom: 1.5rem;
   }
 
@@ -1103,13 +1206,13 @@ header{
   .plan-details {
       font-size: 0.9rem;
       margin-top: 1rem;
-      text-align: center; /* Center the text on small screens */
+      text-align: center; 
   }
 
   .feature {
-      width: 100%; /* Stack feature boxes for small screens */
+      width: 100%; 
       margin-bottom: 1.5rem;
-      text-align: center; /* Center the content of features */
+      text-align: center; 
   }
 
   .feature-icon {
@@ -1125,7 +1228,7 @@ header{
   .feature-text {
       font-size: 0.8rem;
   }
-}
+} */
 
 /* try for free styling */
 
@@ -1346,15 +1449,22 @@ header{
 .footer {
   padding: 10.2rem 0;
   border-top: 1px solid rgb(238, 238, 238);
+  background-color: #f8f8f8;
 }
 
 .grid--footer {
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 4rem;
+  justify-items: center;
+  align-items: start;
 }
 
 .logo-col {
   display: flex;
   flex-direction: column;
+  align-items: center; /* Center the logo and social links */
+  text-align: center;
 }
 
 .footer-logo {
@@ -1366,6 +1476,7 @@ header{
   list-style: none;
   display: flex;
   gap: 2rem;
+  justify-content: center;
 }
 
 .social-icon {
@@ -1390,6 +1501,7 @@ header{
   font-style: normal;
   font-size: 1rem;
   line-height: 1.6;
+  text-align: center;
 }
 
 .address {
@@ -1401,6 +1513,7 @@ header{
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  align-items: center; /* Center the footer nav items */
 }
 
 .footer-link:link,
@@ -1416,37 +1529,29 @@ header{
   color: rgb(85, 85, 85);
 }
 
-
 /* Media Query for screens 800px and below */
-
 @media screen and (max-width: 800px) {
   .footer {
-    padding: 4rem 0;
+    padding: 6rem 0;
   }
 
   .grid--footer {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-    justify-content: space-between; 
+    justify-content: center; /* Center content horizontally */
+    align-items: center;
   }
 
-  
+  .footer .logo-col,
+  .footer .address-col,
   .footer .nav-col {
     flex: 1;
-    min-width: 160px; 
+    min-width: 200px; /* Ensures proper wrapping */
     text-align: center;
+    margin-bottom: 2rem;
   }
 
-  
-  .footer .logo-col,
-  .footer .address-col {
-    flex: 1;
-    min-width: 160px; 
-    text-align: center; 
-  }
-
- 
   .social-links {
     display: flex;
     justify-content: center;
@@ -1458,7 +1563,6 @@ header{
     margin-bottom: 1rem;
   }
 
-  
   .contacts {
     display: flex;
     flex-direction: column;
@@ -1467,29 +1571,26 @@ header{
     text-align: center;
   }
 
-  
   .footer-nav {
     flex-direction: column;
     gap: 1rem;
+    align-items: center;
   }
 
-  
   .footer-heading {
     font-size: 1.1rem;
     margin-bottom: 1rem;
   }
 
-  
   .footer-link {
     font-size: 1rem;
     color: rgb(118, 118, 118);
   }
 
- 
   .copyright {
     font-size: 1rem;
     color: #767676;
     text-align: center;
-    margin-top: 2rem; 
+    margin-top: 2rem;
   }
 }
