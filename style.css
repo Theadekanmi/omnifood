@@ -164,13 +164,13 @@ header{
     
       .nav-link a:link,
       .nav-link a:visited {
-        font-size: 3rem;
+        font-size: 2rem;
       }
 }
 
   /* main section styling */
 #main{
-    margin-top: 70px;
+    margin-top: 55px;
     background-color: #fdf2e9;
 }
 
