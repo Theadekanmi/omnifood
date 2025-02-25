@@ -163,9 +163,10 @@ header{
     align-items: center;
     gap: 30px;
 }
-.main-item{
-    width: 47%;
-    height: 600px;
+    .main-item{
+        width: 100%;
+        height: auto;
+
 }
 .main-item h1{
     font-weight: 700;
@@ -178,13 +179,14 @@ header{
     line-height: 1.5;
     margin-top: 25px;
   }
-  .btn,
-.btn:link,
-.btn:visited {
-    margin-top: 40px;
-  display: inline-block;
-  text-decoration: none;
-  font-size: 1.5rem;
+    .btn,
+    .btn:link,
+    .btn:visited {
+        margin-top: 20px;
+        display: inline-block;
+        text-decoration: none;
+        font-size: 1.2rem;
+
   font-weight: 500;
   padding:3% 4%;
   border: none;
@@ -551,8 +553,9 @@ header{
     background-color: #ffd43b;
   }
   
-  .meal-title {
-    font-size: 1.3rem;
+    .meal-title {
+        font-size: 1.1rem;
+
     color: rgb(51, 51, 51);
     font-weight: 600;
     margin-bottom: 30px;
@@ -1150,8 +1153,9 @@ header{
   margin-bottom: 3rem;
 }
 
-.cta-text {
-  font-size: 1.3rem;
+    .cta-text {
+        font-size: 1.1rem;
+
   line-height: 1.8;
   margin-bottom: 3rem;
 }
@@ -1238,8 +1242,9 @@ header{
     font-size: 1.1rem;
   }
 
-  .cta .heading-secondary {
-    font-size: 2rem; /* Adjust heading size for smaller screens */
+    .cta .heading-secondary {
+        font-size: 1.6rem; /* Adjust heading size for smaller screens */
+
     margin-bottom: 2rem;
   }
 
@@ -1414,9 +1419,9 @@ header{
 
 /* Media Query for screens 800px and below */
 
-/* @media screen and (max-width: 800px) {
+@media screen and (max-width: 800px) {
   .footer {
-    padding: 4rem 0; 
+    padding: 4rem 0;
   }
 
   .grid--footer {
@@ -1487,4 +1492,4 @@ header{
     text-align: center;
     margin-top: 2rem; 
   }
-} */
+}
